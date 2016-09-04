@@ -110,32 +110,6 @@ byte W[] = {DD2, AX, PA3, BB2, EL, YY1, UW2};
 byte X[] = {EH, EH, PA3, KK2, SS, SS};
 byte Y[] = {WW, AY};
 byte Z[] = {ZZ, IY};
-// Radio ST Words
-byte point[] = {PP, OY, NN1, TT2};
-byte FM[] = {EH, EH, FF, PA4, EH, EH, MM};
-byte DJ[] = {DD2, IY, PA2, PA3, JH, EY};
-byte chip[] = {CH, IH, IH, PP};
-byte computer[] = {KK1, AX, MM, PP, YY1, UW1, TT2, ER1};
-byte request[] = {RR1, IY, KK1, WW, EH, SS, TT2};
-byte requests[] = {RR1, IY, KK1, WW, EH, SS, TT1, SS};
-byte Auto[] = {AW, TT2, OW};
-byte way[] = {WW, EH, EY};
-byte high[] = {HH1, AA, AY};
-byte radio[] = {RR1, EH, EY, DD2, IY, OW};
-byte ward[] = {WW, OR, DH2};
-byte colorado[] = {KK3, AX, LL, OR, RR2, AE, DD2, DH2, OW};
-// DJs Titles
-byte SkyFly[] = {SS, KK1, AY, PA5, FF, LL, AY};
-byte Wille[] = {WW, IH, LL, LL, IY};
-byte CP3O[] = {SS, SS, IY, PA4, PP, IY, PA4, TH, RR1, IY, PA4, OW};
-byte CircularLogic[] = {SS, ER1, RR1, KK1, UW2, LL, ER1, RR2, PA4, LL, AA, AA, JH, IH, KK2};
-byte Jake[] = {JH, EY, KK1};
-byte Oli[] = {AO, LL, IY};
-byte Cassidy[] = {KK1, AE, SS, IH, DD2, IY};
-byte Apache[] = {AX, PP, AE, CH, IY};
-byte NocturnaTina[] = {NN2, AA, KK1, TT2, ER1, NN2, AA, PA3, TT2, IY, NN2, AA};
-byte RockyFlats[] = {RR1, AA, KK1, IY, PA4, FF, LL, AE, TT1, SS};
-byte SweetT[] = {SS, WW, IY, TT2, PA4, TT2, IY};
 // General Words
 byte am[] = {AE, MM};
 byte on[] = {AA, AA, NN1};
@@ -152,13 +126,15 @@ byte number[] = {NN1, AX, MM, BB1, ER1, RR2};
 byte our[] = {AA, RR2};
 byte call[] = {KK1, AO, LL, LL};
 byte hi[] = {HH1, AY, EY};
+byte point[] = {PP, OY, NN1, TT2};
+byte chip[] = {CH, IH, IH, PP};
+byte computer[] = {KK1, AX, MM, PP, YY1, UW1, TT2, ER1};
+byte Auto[] = {AW, TT2, OW};
+byte way[] = {WW, EH, EY};
+byte colorado[] = {KK3, AX, LL, OR, RR2, AE, DD2, DH2, OW};
 
-byte *phNum[] = {three, zero, three, five, three, two, four, eight, nine, five};
-//byte lengths[] = {3, 3, 3, 4, 3, 3, 3, 3, 4, 4};
-byte *names[] = {DJ, SkyFly, DJ, Wille, DJ, CP3O, DJ, CircularLogic, DJ, Oli, DJ, Jake, DJ, Apache, DJ, DJ, NocturnaTina, DJ, Cassidy, RockyFlats, DJ, SweetT};
-//byte lengths[] = {6, 7, 6, 5, 6, 12, 6, 15, 6, 3, 6, 3, 6, 5, 6, 12, 6, 6, 6, 10, 6, 7};
-byte *phrase1[] = {I, am, chip, your, computer, DJ, on, ninety, point, five, FM, pause5, way, high, radio, in, ward, colorado, pause5, pause5, enjoy};
-byte lengths[] = {2, 2, 4, 2, 8, 6, 3, 6, 4, 4, 7, 1, 3, 3, 6, 2, 3, 9, 1, 1, 4};
+byte *phNum[] = {three, three, three, five, five, five, four, zero, nine, five};
+byte lengths[] = {3, 3, 3, 4, 5, 5, 3, 3, 4, 4};
 
 int buttonState;             // the current reading from the input pin
 int lastButtonState = HIGH;   // the previous reading from the input pin
@@ -177,7 +153,7 @@ void setup() {
  
   digitalWrite(PIN_ALD, HIGH);
   
-  say(phrase1, 21);
+  say(*phnum, 21);
 }
  
 void loop() {
